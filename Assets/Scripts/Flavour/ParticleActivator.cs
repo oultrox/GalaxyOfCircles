@@ -1,9 +1,9 @@
+using GalaxyOfCircles.Entities;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace GalaxyOfCircles.Entities
+namespace GalaxyOfCircles.Flavour
 {
     public class ParticleActivator : MonoBehaviour
     {

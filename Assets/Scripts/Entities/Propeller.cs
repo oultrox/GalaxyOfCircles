@@ -45,25 +45,41 @@ namespace GalaxyOfCircles.Entities
             // Bounce off using Reflect function with a little bit of randomization offset.
             _contact = collision.GetContact(0);
             _reflectDirection = Vector2.Reflect(_moveDirection, _contact.normal);
-            _randomAngle = Random.Range(-0.2f, 0.2f);
+            _moveDirection = RandomizeDirectionOffset(-0.2f,0.2f);
             
-            _reflectDirection.x += _randomAngle;
-            _reflectDirection.y += _randomAngle;
-            _moveDirection = _reflectDirection.normalized;
-            
-            // Change of color if possible
-            if(_colorChanger != null)
-                _colorChanger.ChangeRandomColor();
-            
-            // Flavour stuff
-            if (_particleActivator != null)
-                _particleActivator.ActivateParticle();
-            
-            if (_graphicBouncer != null)
-                _graphicBouncer.LerpSize();
+            ChangeColor();
 
+            // Flavour stuff
+            ActivateParticles();
+            ActivateGraphicBounce();
         }
 
+        private Vector2 RandomizeDirectionOffset(float minRange, float maxRange)
+        {
+            _randomAngle = Random.Range(minRange, maxRange);
+            _reflectDirection.x += _randomAngle;
+            _reflectDirection.y += _randomAngle;
+            return _reflectDirection.normalized;
+        }
+
+        private void ActivateGraphicBounce()
+        {
+            if (_graphicBouncer != null)
+                _graphicBouncer.LerpSize();
+        }
+
+        private void ActivateParticles()
+        {
+            if (_particleActivator != null)
+                _particleActivator.ActivateParticle();
+        }
+
+        private void ChangeColor()
+        {
+            
+            if (_colorChanger != null)
+                _colorChanger.ChangeRandomColor();
+        }
     }
 }
 

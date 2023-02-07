@@ -13,6 +13,7 @@ namespace GalaxyOfCircles.UI
         
         private TMP_InputField _inputField;
         private int _amountCircles;
+        private bool _isAmountParsed = false;
 
         private void Awake()
         {
@@ -30,14 +31,19 @@ namespace GalaxyOfCircles.UI
         {
             if (int.TryParse(value, out _amountCircles))
             {
+                _isAmountParsed = true;
                 _eventChangeAmountCircles.RaiseEvent(_amountCircles);
+            }
+            else
+            {
+                _isAmountParsed = false;
             }
         }
 
         // If the value is not withing range we raise the error wrong value event.
         public void CheckValue(string value)
         {
-            if (_amountCircles <= 0 || _amountCircles > 100)
+            if ((_amountCircles <= 0 || _amountCircles > 100) &&  _isAmountParsed)
                 _eventWrongValue.RaiseEvent();    
         }
     }
