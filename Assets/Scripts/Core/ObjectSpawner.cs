@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using GalaxyOfCircles.Events;
 
@@ -7,18 +6,22 @@ namespace GalaxyOfCircles.Core
     public class ObjectSpawner : MonoBehaviour
     {
         [Header("Reference")]
+        [Space(6)]
         [SerializeField] private GameObject _objectPrefab;
         [SerializeField] private IntEventChannelSO _eventChangeAmountCircles;
         [SerializeField] private VoidEventChannelSO _eventStartGame;
         
         [Header("Spawn Limits")]
+        [Space(6)]
         [SerializeField] private Transform _xPositionMin;
         [SerializeField] private Transform _xPositionMax;
         [SerializeField] private Transform _yPositionMin;
         [SerializeField] private Transform _yPositionMax;
         
-        private int _amountCircles = 10;
-        
+        private int _amountCircles;
+        private Vector3 randomPosition;
+
+
         private void Start()
         {
             _eventChangeAmountCircles.OnEventRaised += SetAmountCircles;
@@ -39,9 +42,9 @@ namespace GalaxyOfCircles.Core
         {
             for (int i = 0; i < _amountCircles; i++)
             {
-                float xRange = _xPositionMax.position.x - _xPositionMin.position.x;
-                float yRange = _yPositionMax.position.y - _yPositionMin.position.y;
-                Vector3 randomPosition = new Vector3(Random.Range(_xPositionMin.position.x, _xPositionMax.position.x), Random.Range(_yPositionMin.position.y, _yPositionMax.position.y), 0);
+                randomPosition.x = (Random.Range(_xPositionMin.position.x, _xPositionMax.position.x));
+                randomPosition.y = (Random.Range(_yPositionMin.position.y, _yPositionMax.position.y));
+                randomPosition.z = 0;
                 Instantiate(_objectPrefab, randomPosition, Quaternion.identity, transform);
             }
         }

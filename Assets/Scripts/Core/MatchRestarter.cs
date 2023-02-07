@@ -6,11 +6,11 @@ namespace GalaxyOfCircles.Core
 {
     public class MatchRestarter : MonoBehaviour
     {
-        [SerializeField] private VoidEventChannelSO _resetEvent;
+        [SerializeField] private VoidEventChannelSO _eventReset;
 
         void Start()
         {
-            _resetEvent.OnEventRaised += Restart;
+            _eventReset.OnEventRaised += Restart;
         }
 
         void Restart()
