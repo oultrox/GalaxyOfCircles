@@ -7,19 +7,10 @@ namespace GalaxyOfCircles.UI
     {
         [Header("Channel Events Reference")]
         [SerializeField] private VoidEventChannelSO _eventDisabler;
-
-        void Start()
+        
+        private void Start()
         {
             _eventDisabler.OnEventRaised += Hide;
-        }
-        private void OnEnable()
-        {
-            _eventDisabler.OnEventRaised += Hide;
-        }
-
-        private void OnDisable()
-        {
-            _eventDisabler.OnEventRaised -= Hide;
         }
 
         private void OnDestroy()
@@ -27,12 +18,9 @@ namespace GalaxyOfCircles.UI
             _eventDisabler.OnEventRaised -= Hide;
         }
 
-        void Hide()
+        private void Hide()
         {
-            if (gameObject != null)
-            {
-                gameObject.SetActive(false);
-            }
+            gameObject.SetActive(false);
         }
     }
 }

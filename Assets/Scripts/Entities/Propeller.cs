@@ -8,6 +8,8 @@ namespace GalaxyOfCircles.Entities
         [SerializeField] private float _movementSpeed;
         private Rigidbody2D _rBody;
         private ColorChanger _colorChanger;
+        private ParticleActivator _particleActivator;
+
         private ContactPoint2D _contact;
         private Vector2 _moveDirection;
         private Vector2 _reflectDirection;
@@ -19,6 +21,7 @@ namespace GalaxyOfCircles.Entities
         {
             _rBody = GetComponent<Rigidbody2D>();
             _colorChanger = GetComponent<ColorChanger>();
+            _particleActivator = GetComponent<ParticleActivator>();
         }
 
         private void Start()
@@ -45,6 +48,9 @@ namespace GalaxyOfCircles.Entities
             
             if(_colorChanger != null)
                 _colorChanger.ChangeRandomColor();
+            
+            if (_particleActivator != null)
+                _particleActivator.ActivateParticle();
         }
 
     }

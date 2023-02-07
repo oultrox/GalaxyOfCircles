@@ -439,6 +439,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3892158965732424787, guid: ce62c0484bc04234db656ef9ffdb125f, type: 3}
+      propertyPath: _eventToggler
+      value: 
+      objectReference: {fileID: 11400000, guid: 92d016de80e96524686f80c885ffa1d5, type: 2}
+    - target: {fileID: 3892158965732424787, guid: ce62c0484bc04234db656ef9ffdb125f, type: 3}
+      propertyPath: _eventDisabler
+      value: 
+      objectReference: {fileID: 11400000, guid: 92d016de80e96524686f80c885ffa1d5, type: 2}
     - target: {fileID: 3892158965987104753, guid: ce62c0484bc04234db656ef9ffdb125f, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -12,6 +12,11 @@ namespace GalaxyOfCircles.Entities
         private Color _originalColor;
         private Color _randomColor;
 
+        #region Properties
+        public Color RandomColor { get => _randomColor; set => _randomColor = value; }
+        #endregion
+
+
         private void Awake()
         {
             _spriteRender = GetComponent<SpriteRenderer>();
