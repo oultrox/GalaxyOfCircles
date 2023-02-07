@@ -19,6 +19,7 @@ namespace GalaxyOfCircles.UI
             _inputField = GetComponent<TMP_InputField>();
         }
 
+        // Subscribing to events from inputfield so we can grab the num of circles comfortably.
         private void Start()
         {
             _inputField.onValueChanged.AddListener(Edit);

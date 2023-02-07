@@ -29,7 +29,7 @@ namespace GalaxyOfCircles.Entities
 
         public void ChangeRandomColor()
         {
-            StopCoroutine(ChangeColor());
+            StopAllCoroutines();
             StartCoroutine(ChangeColor());
         }
 

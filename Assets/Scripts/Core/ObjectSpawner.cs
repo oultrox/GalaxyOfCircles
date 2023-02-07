@@ -1,5 +1,4 @@
 using UnityEngine;
-using GalaxyOfCircles.Events;
 
 namespace GalaxyOfCircles.Core
 {

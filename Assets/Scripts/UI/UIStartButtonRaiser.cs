@@ -25,15 +25,16 @@ namespace GalaxyOfCircles.UI
             _eventChangeAmountCircles.OnEventRaised += SetAmountCircles;
         }
 
+        private void SetAmountCircles(int amount)
+        {
+            _amountCircles = amount;
+        }
+
+        // Only going to start the game if the amount of circles from input is on range.
         private void CheckValue()
         {
             if (_amountCircles > 0 && _amountCircles <= 100)
                 _eventGameStart.RaiseEvent();
-        }
-
-        private void SetAmountCircles(int amount)
-        {
-            _amountCircles = amount;
         }
     }
 }

@@ -29,6 +29,7 @@ namespace GalaxyOfCircles.Entities
 
         private void Start()
         {
+            // Set a random angle start
             _angleMotion = Random.Range(-360, 360);
             _moveDirection.x = Mathf.Cos(Mathf.Deg2Rad * _angleMotion);
             _moveDirection.y = Mathf.Sin(Mathf.Deg2Rad * _angleMotion);
@@ -41,6 +42,7 @@ namespace GalaxyOfCircles.Entities
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            // Bounce off using Reflect function with a little bit of randomization offset.
             _contact = collision.GetContact(0);
             _reflectDirection = Vector2.Reflect(_moveDirection, _contact.normal);
             _randomAngle = Random.Range(-0.2f, 0.2f);
@@ -49,9 +51,11 @@ namespace GalaxyOfCircles.Entities
             _reflectDirection.y += _randomAngle;
             _moveDirection = _reflectDirection.normalized;
             
+            // Change of color if possible
             if(_colorChanger != null)
                 _colorChanger.ChangeRandomColor();
             
+            // Flavour stuff
             if (_particleActivator != null)
                 _particleActivator.ActivateParticle();
             
