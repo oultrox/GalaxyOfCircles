@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 200
+  _randomOffsetBounce: 0.4
 --- !u!114 &-462542093991943534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c29036e3bd7e242a0a4643d9f7b517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scaleFactor: 1.5
 --- !u!1001 &2923882189310119166
 PrefabInstance:
   m_ObjectHideFlags: 0
