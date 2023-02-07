@@ -6,6 +6,7 @@ namespace GalaxyOfCircles.Core
 {
     public class MatchRestarter : MonoBehaviour
     {
+        [Header("Channel Events Reference")]
         [SerializeField] private VoidEventChannelSO _eventReset;
 
         private void Start()

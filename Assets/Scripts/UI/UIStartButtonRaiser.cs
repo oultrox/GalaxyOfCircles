@@ -5,10 +5,12 @@ using UnityEngine.UI;
 namespace GalaxyOfCircles.UI
 {
     [RequireComponent(typeof(Button))]
-    public class UIStartRaiser : MonoBehaviour
+    public class UIStartButtonRaiser : MonoBehaviour
     {
+        [Header("Channel Events Reference")]
         [SerializeField] private IntEventChannelSO _eventChangeAmountCircles;
         [SerializeField] private VoidEventChannelSO _eventGameStart;
+
         private Button _buttonStart;
         private int _amountCircles;
 

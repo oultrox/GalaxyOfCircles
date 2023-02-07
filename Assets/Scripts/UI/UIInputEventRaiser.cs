@@ -7,8 +7,10 @@ namespace GalaxyOfCircles.UI
     [RequireComponent(typeof(TMP_InputField))]
     public class UIInputEventRaiser : MonoBehaviour
     {
+        [Header("Channel Events Reference")]
         [SerializeField] private IntEventChannelSO _eventChangeAmountCircles;
         [SerializeField] private VoidEventChannelSO _eventWrongValue;
+        
         private TMP_InputField _inputField;
         private int _amountCircles;
 

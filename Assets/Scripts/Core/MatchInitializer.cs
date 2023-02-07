@@ -6,6 +6,7 @@ namespace GalaxyOfCircles.Core
     [RequireComponent(typeof(ObjectSpawner))]
     public class MatchInitializer : MonoBehaviour
     {
+        [Header("Channel Events Reference")]
         [SerializeField] private VoidEventChannelSO _eventStartGame;
         [SerializeField] private IntEventChannelSO _eventChangeAmountCircles;
         

@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class UIRangeCatcher : MonoBehaviour
 {
-
+    [Header("Reference")]
     [SerializeField] private GameObject _catchError;
     [SerializeField] private float _amountOfSecondsShown = 1.3f;
+    
+    [Header("Channel Events Reference")]
     [SerializeField] private VoidEventChannelSO _eventWrongValue;
+    
+    
     private void Start()
     {
         _eventWrongValue.OnEventRaised += ShowError;
@@ -18,6 +22,7 @@ public class UIRangeCatcher : MonoBehaviour
     {
         StartCoroutine(DisplayTextError());
     }
+
     private IEnumerator DisplayTextError()
     {
         _catchError.SetActive(true);

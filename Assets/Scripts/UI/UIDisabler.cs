@@ -5,6 +5,7 @@ namespace GalaxyOfCircles.UI
 {
     public class UIDisabler : MonoBehaviour
     {
+        [Header("Channel Events Reference")]
         [SerializeField] private VoidEventChannelSO _eventDisabler;
 
         void Start()
@@ -13,7 +14,7 @@ namespace GalaxyOfCircles.UI
         }
         private void OnEnable()
         {
-            _eventDisabler.OnEventRaised -= Hide;
+            _eventDisabler.OnEventRaised += Hide;
         }
 
         private void OnDisable()
