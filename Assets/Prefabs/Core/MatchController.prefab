@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526a28f8cb13997449ee517eeed38b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventStartGame: {fileID: 11400000, guid: 92d016de80e96524686f80c885ffa1d5, type: 2}
+  _eventChangeAmountCircles: {fileID: 11400000, guid: 951953cdff130b84489dd47135de9c08, type: 2}
 --- !u!114 &216527180741870971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,8 +74,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectPrefab: {fileID: 4202307392361276031, guid: 46f9d1fbd1ac2a249bc20d90aecc45e7, type: 3}
-  _eventChangeAmountCircles: {fileID: 11400000, guid: 951953cdff130b84489dd47135de9c08, type: 2}
-  _eventStartGame: {fileID: 11400000, guid: 92d016de80e96524686f80c885ffa1d5, type: 2}
   _xPositionMin: {fileID: 0}
   _xPositionMax: {fileID: 0}
   _yPositionMin: {fileID: 0}

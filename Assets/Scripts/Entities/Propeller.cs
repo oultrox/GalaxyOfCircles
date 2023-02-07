@@ -1,3 +1,4 @@
+using GalaxyOfCircles.Flavour;
 using UnityEngine;
 
 namespace GalaxyOfCircles.Entities
@@ -9,6 +10,7 @@ namespace GalaxyOfCircles.Entities
         private Rigidbody2D _rBody;
         private ColorChanger _colorChanger;
         private ParticleActivator _particleActivator;
+        private GraphicBouncer _graphicBouncer;
 
         private ContactPoint2D _contact;
         private Vector2 _moveDirection;
@@ -22,6 +24,7 @@ namespace GalaxyOfCircles.Entities
             _rBody = GetComponent<Rigidbody2D>();
             _colorChanger = GetComponent<ColorChanger>();
             _particleActivator = GetComponent<ParticleActivator>();
+            _graphicBouncer = GetComponent<GraphicBouncer>();
         }
 
         private void Start()
@@ -51,6 +54,10 @@ namespace GalaxyOfCircles.Entities
             
             if (_particleActivator != null)
                 _particleActivator.ActivateParticle();
+            
+            if (_graphicBouncer != null)
+                _graphicBouncer.LerpSize();
+
         }
 
     }
