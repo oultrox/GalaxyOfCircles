@@ -37,6 +37,7 @@ namespace GalaxyOfCircles.UI
             else
             {
                 _isAmountParsed = false;
+                _eventChangeAmountCircles.RaiseEvent(0);
             }
         }
 

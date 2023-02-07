@@ -7,6 +7,8 @@ namespace GalaxyOfCircles.Entities
     public class Propeller : MonoBehaviour
     {
         [SerializeField] private float _movementSpeed;
+        [Range(0,0.9f)]
+        [SerializeField] private float _randomOffsetBounce = 0.5f;
         private Rigidbody2D _rBody;
         private ColorChanger _colorChanger;
         private ParticleActivator _particleActivator;
@@ -45,7 +47,7 @@ namespace GalaxyOfCircles.Entities
             // Bounce off using Reflect function with a little bit of randomization offset.
             _contact = collision.GetContact(0);
             _reflectDirection = Vector2.Reflect(_moveDirection, _contact.normal);
-            _moveDirection = RandomizeDirectionOffset(-0.2f,0.2f);
+            _moveDirection = RandomizeDirectionOffset(-_randomOffsetBounce, _randomOffsetBounce);
             
             ChangeColor();
 

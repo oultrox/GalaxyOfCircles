@@ -4,18 +4,19 @@ namespace GalaxyOfCircles.Flavour
 {
     public class GraphicBouncer : MonoBehaviour
     {
-        private SpriteRenderer spriteRenderer;
-        private Vector3 initialScale;
-        private Vector3 targetScale;
+        [SerializeField] private float _scaleFactor = 1.5f ;
+        private SpriteRenderer _spriteRenderer;
+        private Vector3 _initialScale;
+        private Vector3 _targetScale;
         private const float LERP_DURATION = 0.3f;
-        private float currentLerpTime = 0f;
+        private float _currentLerpTime = 0f;
         private bool _isActive = false;
         
         void Start()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            initialScale = spriteRenderer.transform.localScale;
-            targetScale = initialScale * 1.3f;
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _initialScale = _spriteRenderer.transform.localScale;
+            _targetScale = _initialScale * _scaleFactor;
         }
 
         void Update()
@@ -26,16 +27,16 @@ namespace GalaxyOfCircles.Flavour
 
         private void ApplySizeLerp()
         {
-            currentLerpTime += Time.deltaTime;
+            _currentLerpTime += Time.deltaTime;
             
-            if (currentLerpTime > LERP_DURATION)
+            if (_currentLerpTime > LERP_DURATION)
             {
-                currentLerpTime = 0f;
+                _currentLerpTime = 0f;
                 _isActive = false;
             }
 
-            float t = currentLerpTime / LERP_DURATION;
-            spriteRenderer.transform.localScale = Vector3.Lerp(initialScale, targetScale, Mathf.Sin(Mathf.PI * t));
+            float t = _currentLerpTime / LERP_DURATION;
+            _spriteRenderer.transform.localScale = Vector3.Lerp(_initialScale, _targetScale, Mathf.Sin(Mathf.PI * t));
         }
 
         public void LerpSize()

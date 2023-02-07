@@ -1,4 +1,3 @@
-using GalaxyOfCircles.Entities;
 using System.Collections;
 using UnityEngine;
 
@@ -10,7 +9,7 @@ namespace GalaxyOfCircles.Flavour
         private ParticleSystem _particlePrefab;
         private ColorChanger _colorChanger;
         private ParticleSystem.MainModule _particleMain;
-        private readonly float _delayDeactivate = 0.8f;
+        private const float DELAY_DEACTIVATE = 0.8f;
        
         private void Awake()
         {
@@ -31,7 +30,7 @@ namespace GalaxyOfCircles.Flavour
             _particleMain.startColor = _colorChanger.RandomColor;
 
             _particlePrefab.Play();
-            yield return new WaitForSeconds(_delayDeactivate);
+            yield return new WaitForSeconds(DELAY_DEACTIVATE);
             _particlePrefab.gameObject.SetActive(false);
         }
     }

@@ -7,8 +7,8 @@ namespace GalaxyOfCircles.UI
     public class UIRangeCatcher : MonoBehaviour
     {
         [Header("Reference")]
-        [SerializeField] private GameObject _catchError;
-        [SerializeField] private float _amountOfSecondsShown = 1.3f;
+        [SerializeField] private GameObject[] _catchErrorTexts;
+        [SerializeField] private float _amountOfSecondsShown = 1.5f;
 
         [Header("Channel Events Reference")]
         [SerializeField] private VoidEventChannelSO _eventWrongValue;
@@ -31,9 +31,17 @@ namespace GalaxyOfCircles.UI
 
         private IEnumerator DisplayTextError()
         {
-            _catchError.SetActive(true);
+            SetGameObjectsActive(true);
             yield return new WaitForSeconds(_amountOfSecondsShown);
-            _catchError.SetActive(false);
+            SetGameObjectsActive(false);
+        }
+
+        private void SetGameObjectsActive(bool isActive)
+        {
+            for (int i = 0; i < _catchErrorTexts.Length; i++)
+            {
+                _catchErrorTexts[i].SetActive(isActive);
+            }
         }
     }
 

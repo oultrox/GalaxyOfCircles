@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace GalaxyOfCircles.Entities
+namespace GalaxyOfCircles.Flavour
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class ColorChanger : MonoBehaviour
