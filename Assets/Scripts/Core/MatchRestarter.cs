@@ -8,12 +8,12 @@ namespace GalaxyOfCircles.Core
     {
         [SerializeField] private VoidEventChannelSO _eventReset;
 
-        void Start()
+        private void Start()
         {
             _eventReset.OnEventRaised += Restart;
         }
 
-        void Restart()
+        private void Restart()
         {
             Debug.Log("Restarting");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

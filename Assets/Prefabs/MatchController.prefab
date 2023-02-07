@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4144057629267459003}
+  - component: {fileID: 604007137525079935}
   - component: {fileID: 216527180741870971}
+  - component: {fileID: 149496640920110971}
   m_Layer: 0
   m_Name: MatchController
   m_TagString: Untagged
@@ -32,6 +34,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &604007137525079935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4144057629267459000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 526a28f8cb13997449ee517eeed38b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &216527180741870971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,4 +58,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6347f98f43c544ca7bb2c256dd89f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _resetEvent: {fileID: 11400000, guid: f084f64bd7784b944946e1b55f0c8d9d, type: 2}
+  _eventReset: {fileID: 11400000, guid: f084f64bd7784b944946e1b55f0c8d9d, type: 2}
+--- !u!114 &149496640920110971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4144057629267459000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55af877f48813144880187ea77f8349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectPrefab: {fileID: 4202307392361276031, guid: 46f9d1fbd1ac2a249bc20d90aecc45e7, type: 3}
+  _eventChangeAmountCircles: {fileID: 11400000, guid: 951953cdff130b84489dd47135de9c08, type: 2}
+  _eventStartGame: {fileID: 11400000, guid: 92d016de80e96524686f80c885ffa1d5, type: 2}
+  _xPositionMin: {fileID: 0}
+  _xPositionMax: {fileID: 0}
+  _yPositionMin: {fileID: 0}
+  _yPositionMax: {fileID: 0}

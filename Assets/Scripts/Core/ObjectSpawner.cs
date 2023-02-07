@@ -8,8 +8,6 @@ namespace GalaxyOfCircles.Core
         [Header("Reference")]
         [Space(6)]
         [SerializeField] private GameObject _objectPrefab;
-        [SerializeField] private IntEventChannelSO _eventChangeAmountCircles;
-        [SerializeField] private VoidEventChannelSO _eventStartGame;
         
         [Header("Spawn Limits")]
         [Space(6)]
@@ -18,29 +16,11 @@ namespace GalaxyOfCircles.Core
         [SerializeField] private Transform _yPositionMin;
         [SerializeField] private Transform _yPositionMax;
         
-        private int _amountCircles;
         private Vector3 randomPosition;
 
-
-        private void Start()
+        public void SpawnObjectAmount(int amount)
         {
-            _eventChangeAmountCircles.OnEventRaised += SetAmountCircles;
-            _eventStartGame.OnEventRaised += SpawnObject;
-        }
-
-        private void OnDestroy()
-        {
-            _eventStartGame.OnEventRaised -= SpawnObject;
-        }
-
-        private void SetAmountCircles(int amount)
-        {
-            _amountCircles = amount;
-        }
-
-        private void SpawnObject()
-        {
-            for (int i = 0; i < _amountCircles; i++)
+            for (int i = 0; i < amount; i++)
             {
                 randomPosition.x = (Random.Range(_xPositionMin.position.x, _xPositionMax.position.x));
                 randomPosition.y = (Random.Range(_yPositionMin.position.y, _yPositionMax.position.y));
