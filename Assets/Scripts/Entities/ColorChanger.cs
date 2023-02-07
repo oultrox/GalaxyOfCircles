@@ -44,7 +44,6 @@ namespace GalaxyOfCircles.Entities
             yield return new WaitForSeconds(_colorChangeTime);
             _spriteRender.color = _originalColor;
         }
-
     }
 
 }

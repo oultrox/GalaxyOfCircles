@@ -13,7 +13,6 @@ namespace GalaxyOfCircles.UI
         [Header("Channel Events Reference")]
         [SerializeField] private VoidEventChannelSO _eventWrongValue;
 
-
         private void Start()
         {
             _eventWrongValue.OnEventRaised += ShowError;
@@ -26,6 +25,7 @@ namespace GalaxyOfCircles.UI
 
         private void ShowError()
         {
+            StopAllCoroutines();
             StartCoroutine(DisplayTextError());
         }
 

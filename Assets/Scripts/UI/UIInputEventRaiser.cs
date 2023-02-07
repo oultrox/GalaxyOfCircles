@@ -34,6 +34,7 @@ namespace GalaxyOfCircles.UI
             }
         }
 
+        // If the value is not withing range we raise the error wrong value event.
         public void CheckValue(string value)
         {
             if (_amountCircles <= 0 || _amountCircles > 100)

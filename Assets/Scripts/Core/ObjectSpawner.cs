@@ -17,6 +17,7 @@ namespace GalaxyOfCircles.Core
         
         private Vector3 randomPosition;
 
+        // You know what this do. :P
         public void SpawnObjectAmount(int amount)
         {
             for (int i = 0; i < amount; i++)
