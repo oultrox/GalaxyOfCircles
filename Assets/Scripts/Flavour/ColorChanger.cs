@@ -10,7 +10,7 @@ namespace GalaxyOfCircles.Flavour
         private SpriteRenderer _spriteRender;
         private float _r, _g, _b;
         private Color _originalColor;
-        private Color _randomColor;
+        private Color _randomColor = new Color(0,0,0);
 
         #region Properties
         public Color RandomColor { get => _randomColor; set => _randomColor = value; }
@@ -38,7 +38,9 @@ namespace GalaxyOfCircles.Flavour
             _r = Random.Range(0f, 1f);
             _g = Random.Range(0f, 1f);
             _b = Random.Range(0f, 1f);
-            _randomColor = new Color(_r, _g, _b);
+            _randomColor.r = _r;
+            _randomColor.g = _g;
+            _randomColor.b = _b;
             _spriteRender.color = _randomColor;
 
             yield return new WaitForSeconds(_colorChangeTime);

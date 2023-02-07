@@ -45,7 +45,8 @@ namespace GalaxyOfCircles.Entities
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            BounceDirection(collision.GetContact(0));
+            _contact = collision.GetContact(0);
+            BounceDirection(_contact);
             ChangeColor();
             ActivateParticles();
             ActivateGraphicBounce();
@@ -56,15 +57,15 @@ namespace GalaxyOfCircles.Entities
         {
             if (_rBody.velocity.magnitude > MIN_TRESHOLD_MAGNITUDE || collision.gameObject.CompareTag(WALL_TAG) == false)
                 return;
-            BounceDirection(collision.GetContact(0));
 
+            _contact = collision.GetContact(0);
+            BounceDirection(_contact);
         }
 
         // Bounce off using Reflect function
         private void BounceDirection(ContactPoint2D contact)
         {
-            _contact = contact;
-            _reflectDirection = Vector2.Reflect(_moveDirection, _contact.normal);
+            _reflectDirection = Vector2.Reflect(_moveDirection, contact.normal);
             _reflectDirection = RandomizeDirectionOffset(_reflectDirection, -_randomOffsetBounce, _randomOffsetBounce); 
             _moveDirection = _reflectDirection.normalized;
         }

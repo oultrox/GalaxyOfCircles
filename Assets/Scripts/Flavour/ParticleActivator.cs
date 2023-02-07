@@ -17,21 +17,15 @@ namespace GalaxyOfCircles.Flavour
             _particlePrefab = GetComponentInChildren<ParticleSystem>();
         }
 
-        public void ActivateParticle()
+        private void Start()
         {
-            StopAllCoroutines();
-            StartCoroutine(EnableParticle());
+            _particleMain = _particlePrefab.main;
         }
 
-        private IEnumerator EnableParticle()
+        public void ActivateParticle()
         {
-            _particlePrefab.gameObject.SetActive(true);
-            _particleMain = _particlePrefab.main;
             _particleMain.startColor = _colorChanger.RandomColor;
-
             _particlePrefab.Play();
-            yield return new WaitForSeconds(DELAY_DEACTIVATE);
-            _particlePrefab.gameObject.SetActive(false);
         }
     }
 }
