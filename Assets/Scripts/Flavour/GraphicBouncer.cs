@@ -39,7 +39,7 @@ namespace GalaxyOfCircles.Flavour
             _spriteRenderer.transform.localScale = Vector3.Lerp(_initialScale, _targetScale, Mathf.Sin(Mathf.PI * t));
         }
 
-        public void LerpSize()
+        public void BounceSize()
         {
             _isActive = true;
         }

@@ -48,8 +48,8 @@ namespace GalaxyOfCircles.Entities
             _contact = collision.GetContact(0);
             BounceDirection(_contact);
             ChangeColor();
+            BounceSize();
             ActivateParticles();
-            ActivateGraphicBounce();
         }
 
         // Trying to get them away from wall as much as possible.
@@ -79,25 +79,31 @@ namespace GalaxyOfCircles.Entities
             return vector;
         }
 
-        // Flavour stuff
-        private void ActivateGraphicBounce()
+        // Flavour effects
+        private void ChangeColor()
         {
-            if (_graphicBouncer != null)
-                _graphicBouncer.LerpSize();
+            if (_colorChanger == null)
+                return;
+
+            _colorChanger.ChangeRandomColor();
+        }
+
+        private void BounceSize()
+        {
+            if (_graphicBouncer == null)
+                return;
+
+            _graphicBouncer.BounceSize();
         }
 
         private void ActivateParticles()
         {
-            if (_particleActivator != null)
-                _particleActivator.ActivateParticle();
+            if (_particleActivator == null)
+                return;
+
+            _particleActivator.ActivateParticle();
         }
 
-        private void ChangeColor()
-        {
-            
-            if (_colorChanger != null)
-                _colorChanger.ChangeRandomColor();
-        }
     }
 }
 
