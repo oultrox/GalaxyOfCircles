@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace GalaxyOfCircles.Flavour
 {
+    [RequireComponent(typeof(SpriteRenderer))]
     public class GraphicBouncer : MonoBehaviour
     {
         [SerializeField] private float _scaleFactor = 1.5f ;

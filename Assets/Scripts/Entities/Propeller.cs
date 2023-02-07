@@ -8,7 +8,7 @@ namespace GalaxyOfCircles.Entities
     {
         [SerializeField] private float _movementSpeed;
         [Range(0,0.9f)]
-        [SerializeField] private float _randomOffsetBounce = 0.3f;
+        [SerializeField] private float _randomOffsetBounce = 0.4f;
         private Rigidbody2D _rBody;
         private ColorChanger _colorChanger;
         private ParticleActivator _particleActivator;
