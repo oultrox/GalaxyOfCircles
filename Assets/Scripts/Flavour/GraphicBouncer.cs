@@ -36,6 +36,7 @@ namespace GalaxyOfCircles.Flavour
                 _isActive = false;
             }
 
+            // Goes from 0  to 1 t. in the Mathf.Sin(Mathf.PI * t), we just go to a high value then go back based on time.
             float t = _currentLerpTime / LERP_DURATION;
             _spriteRenderer.transform.localScale = Vector3.Lerp(_initialScale, _targetScale, Mathf.Sin(Mathf.PI * t));
         }
